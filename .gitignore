@@ -2,4 +2,5 @@ __pycache__
 *.pyc
 .DS_Store
 Follow2/Save_Models
+Follow2/Results
 Datasets
