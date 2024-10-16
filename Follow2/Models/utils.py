@@ -3,6 +3,7 @@ from datasets import Dataset
 from torch.utils.data import DataLoader
 import pandas as pd
 epochs = 3
+chunksize = 1000
 batch_size = 100
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
@@ -15,7 +16,7 @@ def parseData(dirName):
 def transformData(data, tokenizer):
     # 将数据转化为 Hugging Face Dataset 格式
     # 将数据集准备为 PyTorch 可用的格式
-    tokenized_datasets = Dataset.from_list(data).map(lambda x: tokenize_function(x, tokenizer), batched=True)
+    tokenized_datasets = Dataset.from_pandas(data).map(lambda x: tokenize_function(x, tokenizer), batched=True)
     tokenized_datasets.set_format(type='torch', columns=['input_ids', 'attention_mask', 'label'])   
     return DataLoader(tokenized_datasets, batch_size=batch_size, shuffle=True)
     
