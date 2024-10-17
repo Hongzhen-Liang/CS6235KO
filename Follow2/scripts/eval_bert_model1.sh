@@ -12,4 +12,4 @@ python ../Models/BERT/eval.py ../Save_Models/bert3 ../../Datasets/NEW_FNC/2020-1
 
 echo "========start to test bert4============="
 python ../Models/BERT/eval.py ../Save_Models/bert4 ../../Datasets/NEW_FNC/2020-11.csv ../Results/BERT/bert4_NEW_FNC_2020-11.txt
-python ../Models/BERT/eval.py ../Save_Models/bert4 ../../Datasets/NEW_FNC/2020-11.csv ../Results/BERT/bert4_NEW_FNC_2020-12.txt
+python ../Models/BERT/eval.py ../Save_Models/bert4 ../../Datasets/NEW_FNC/2020-12.csv ../Results/BERT/bert4_NEW_FNC_2020-12.txt
