@@ -5,7 +5,8 @@ import torch
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 import sys
 import pandas as pd
-sys.path.append("../Models")
+import os
+sys.path.append(os.path.split(os.path.realpath(__file__))[0]+"/../")
 from utils import transformData,chunksize
 
 saveDirName = sys.argv[1]

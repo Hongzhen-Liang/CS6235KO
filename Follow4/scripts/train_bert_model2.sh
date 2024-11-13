@@ -1,0 +1,2 @@
+python ../../Follow2/Models/BERT/model1.py ../Save_Models/bert1 ../../Datasets/NEW_FNC/2020-11.csv
+python ../../Follow2/Models/BERT/model1.py ../Save_Models/bert2 ../../Datasets/NEW_FNC/2020-11-snorkel.csv

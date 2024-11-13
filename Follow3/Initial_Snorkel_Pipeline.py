@@ -9,6 +9,7 @@ import os
 
 datasetDir = sys.argv[1]
 resultDir = sys.argv[2]
+output_path = sys.argv[3]
 
 device = torch.device("mps" if torch.backends.mps.is_available() else "cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
@@ -106,3 +107,7 @@ with open(resultDir,'w') as f:
     f.write(f"%f,%f,%f,%f\n"%(accuracy,precision,recall,f1))
     print("Accuracy,Precision,Recall,F1 Score\n")
     print(f"%f,%f,%f,%f\n"%(accuracy,precision,recall,f1))
+
+df['label'] = all_preds
+df.to_csv(output_path, index=False)
+

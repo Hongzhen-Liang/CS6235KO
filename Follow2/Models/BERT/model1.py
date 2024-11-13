@@ -4,7 +4,8 @@ from torch.utils.data import DataLoader
 from transformers import BertForSequenceClassification, AdamW, BertConfig
 import pandas as pd
 import sys
-sys.path.append("../Models")
+import os
+sys.path.append(os.path.split(os.path.realpath(__file__))[0]+"/../")
 from utils import bert_config,transformData,tokenizer,chunksize
 
 saveDirName = sys.argv[1]
