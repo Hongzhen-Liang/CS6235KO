@@ -16,7 +16,7 @@ print(f"Using device: {device}")
 
 @labeling_function()
 def model_bert1_lf(x):
-    saveDirName = "../Follow2/Save_Models/bert1"
+    saveDirName = "../../Follow2/Save_Models/bert1"
     model = BertForSequenceClassification.from_pretrained(saveDirName).to(device)
     tokenizer = BertTokenizer.from_pretrained(saveDirName)
     inputs = tokenizer(
@@ -33,7 +33,7 @@ def model_bert1_lf(x):
     return pred_label
 @labeling_function()
 def model_bert2_lf(x):
-    saveDirName = "../Follow2/Save_Models/bert2"
+    saveDirName = "../../Follow2/Save_Models/bert2"
     model = BertForSequenceClassification.from_pretrained(saveDirName).to(device)
     tokenizer = BertTokenizer.from_pretrained(saveDirName)
     inputs = tokenizer(
@@ -50,7 +50,7 @@ def model_bert2_lf(x):
     return pred_label
 @labeling_function()
 def model_bert3_lf(x):
-    saveDirName = "../Follow2/Save_Models/bert3"
+    saveDirName = "../../Follow2/Save_Models/bert3"
     model = BertForSequenceClassification.from_pretrained(saveDirName).to(device)
     tokenizer = BertTokenizer.from_pretrained(saveDirName)
     inputs = tokenizer(
@@ -67,25 +67,7 @@ def model_bert3_lf(x):
     return pred_label
 @labeling_function()
 def model_bert4_lf(x):
-    saveDirName = "../Follow2/Save_Models/bert4"
-    model = BertForSequenceClassification.from_pretrained(saveDirName).to(device)
-    tokenizer = BertTokenizer.from_pretrained(saveDirName)
-    inputs = tokenizer(
-        x,
-        padding='max_length',
-        truncation=True,
-        max_length=tokenizer.model_max_length,
-        return_tensors='pt'
-    ).to(device)
-    with torch.no_grad():
-        outputs = model(**inputs)
-        logits = outputs.logits
-        pred_label = torch.argmax(logits, dim=-1).item()
-    return pred_label
-
-@labeling_function()
-def model_bert6_lf(x):
-    saveDirName = "../Follow4/Save_Models/bert6"
+    saveDirName = "../../Follow2/Save_Models/bert4"
     model = BertForSequenceClassification.from_pretrained(saveDirName).to(device)
     tokenizer = BertTokenizer.from_pretrained(saveDirName)
     inputs = tokenizer(
@@ -106,7 +88,7 @@ df = pd.read_csv(datasetDir, names=["text", "label"], skiprows=1)
 df_train = df["text"]
 # print("df_train shape:", df_train.shape)
 
-lfs = [model_bert1_lf, model_bert2_lf, model_bert3_lf, model_bert4_lf, model_bert6_lf]
+lfs = [model_bert1_lf, model_bert2_lf, model_bert3_lf, model_bert4_lf]
 applier = LFApplier(lfs=lfs)
 L_train = applier.apply(df_train)
 label_model = LabelModel(cardinality=2)  # Assuming binary labels: FAKE, REAL

@@ -16,7 +16,7 @@ print(f"Using device: {device}")
 
 @labeling_function()
 def model_bert1_lf(x):
-    saveDirName = "../Follow2/Save_Models/bert1"
+    saveDirName = "../../Follow2/Save_Models/bert1"
     model = BertForSequenceClassification.from_pretrained(saveDirName).to(device)
     tokenizer = BertTokenizer.from_pretrained(saveDirName)
     inputs = tokenizer(
@@ -33,7 +33,7 @@ def model_bert1_lf(x):
     return pred_label
 @labeling_function()
 def model_bert2_lf(x):
-    saveDirName = "../Follow2/Save_Models/bert2"
+    saveDirName = "../../Follow2/Save_Models/bert2"
     model = BertForSequenceClassification.from_pretrained(saveDirName).to(device)
     tokenizer = BertTokenizer.from_pretrained(saveDirName)
     inputs = tokenizer(
@@ -50,7 +50,7 @@ def model_bert2_lf(x):
     return pred_label
 @labeling_function()
 def model_bert3_lf(x):
-    saveDirName = "../Follow2/Save_Models/bert3"
+    saveDirName = "../../Follow2/Save_Models/bert3"
     model = BertForSequenceClassification.from_pretrained(saveDirName).to(device)
     tokenizer = BertTokenizer.from_pretrained(saveDirName)
     inputs = tokenizer(
@@ -67,7 +67,7 @@ def model_bert3_lf(x):
     return pred_label
 @labeling_function()
 def model_bert4_lf(x):
-    saveDirName = "../Follow2/Save_Models/bert4"
+    saveDirName = "../../Follow2/Save_Models/bert4"
     model = BertForSequenceClassification.from_pretrained(saveDirName).to(device)
     tokenizer = BertTokenizer.from_pretrained(saveDirName)
     inputs = tokenizer(
@@ -85,7 +85,7 @@ def model_bert4_lf(x):
 
 @labeling_function()
 def model_bert5_lf(x):
-    saveDirName = "../Follow4/Save_Models/bert5"
+    saveDirName = "../../Follow4/Save_Models/bert5"
     model = BertForSequenceClassification.from_pretrained(saveDirName).to(device)
     tokenizer = BertTokenizer.from_pretrained(saveDirName)
     inputs = tokenizer(

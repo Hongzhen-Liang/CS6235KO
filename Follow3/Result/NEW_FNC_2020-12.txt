@@ -1,2 +1,0 @@
-Accuracy,Precision,Recall,F1 Score
-0.306000,0.972881,0.294964,0.452681
